@@ -4,12 +4,13 @@ public class Solution {
         int[] nums = { 0, 1, 0, 3, 12 };
         Solution solution = new Solution();
         solution.print(nums);
-        solution.moveZeroesViolently(nums);
+        solution.moveZeroes(nums);
         solution.print(nums);
     }
 
     /**
-     * 双游标： nextNonZeroIndex记录下一个非零索引，遍历数组将非零元素放置nextNonZeroIndex位置并往前移动
+     * 快慢指针： nextNonZeroIndex记录下一个非零索引，遍历数组将非零元素放置nextNonZeroIndex位置并往前移动
+     * 当快指针到达末尾时，慢指针之后的元素赋为0
      * Tn = O(n)
      * Sn = O(1)
      */
@@ -24,6 +25,28 @@ public class Solution {
         for (int remaining = nextNonZeroIndex; remaining < nums.length; remaining++) {
             nums[remaining] = 0;
         }
+    }
+    
+    /**
+     * 快慢索引（优化） 如果nums = [0,0,0,0,0,0,1] 则moveZeroes赋0的操作需要执行n-1次； 
+     * Tn = O(n)
+     * Sn = O(1)
+     */
+    public void moveZeroesOptimal(int[] nums){
+        int temp;
+        for(int nextNonZeroIndex = 0,  i=0; i<nums.length; i++){
+            if(nums[i] !=0){
+                temp = nums[nextNonZeroIndex];
+                nums[nextNonZeroIndex] = nums[i];
+                nums[i] = temp;
+                nextNonZeroIndex++;
+             }
+        }
+    }
+    public void swap(int[] nums,int a, int b){
+        int temp = nums[a];
+        nums[a] = nums[b];
+        nums[b] = temp;
     }
 
     /**
