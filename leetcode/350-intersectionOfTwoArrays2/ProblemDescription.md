@@ -15,5 +15,8 @@ The result can be in any order.
 
 Follow up:
 - What if the given array is already sorted? How would you optimize your algorithm?
+- 如果给定的数组是已排序的，如何优化算法？
 - What if nums1's size is small compared to nums2's size? Which algorithm is better?
+- 如果数组1的长度比数组2的小，哪种算法更好？
 - What if elements of nums2 are stored on disk,and the memory is limited such that you cannot load all elements into the memory at once?
+- 如果数组2 存储在磁盘中，并且内存是有限的，那你就不能一下子把所有元素都加载到内存中， 这时候算法又有怎样的调整？
