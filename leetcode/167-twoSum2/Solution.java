@@ -26,7 +26,7 @@ class Solution {
                 low++;
         }
         if(low < high){//found 
-            found[0] = low + 1;
+            found[0] = low + 1; // 注意 本题要求返回的是第几个 而不是0开始的索引
             found[1] = high + 1;
         } 
         return found;

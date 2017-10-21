@@ -2,7 +2,7 @@
 
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 
-给定一个整型数组，返回两个数的子数组，这两个数加起来的和为给定的值
+给定一个整型数组， 找到两个相加等于给定值的元素，然后返回返他们的索引
 
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
