@@ -7,6 +7,7 @@ class Solution{
      * 
      * Tn = O(n^2)
      * Sn = O(n^2)
+     * ps： 对于 n^2 的算法，1s 内能处理的数据级别为10^4， 题目中限定N为500，所以耗时大概是20ms 还可以接受
      */
     public int fourSumCount(int[] A, int[] B, int[] C, int[] D) {
         Map<Integer,Integer> map = new HashMap<Integer,Integer>();
