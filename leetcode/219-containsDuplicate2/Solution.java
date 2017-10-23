@@ -3,7 +3,7 @@
  * 通过查找表来减少查找次数，并利用滑动窗口来控制索引间隙
  * 
  * Tn = O(n);
- * Sn = O(n);
+ * Sn = O(k);
  */
 class Solution {
     public boolean containsNearbyDuplicate(int[] nums, int k) {
