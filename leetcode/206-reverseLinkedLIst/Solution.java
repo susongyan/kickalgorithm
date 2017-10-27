@@ -27,6 +27,25 @@ class Solution{
         return reverseListInt(next, head);
     }
 
+    public static ListNode reverseListRecursivly2(ListNode node){
+        if(node == null || node.next == null) {
+            return node;
+        }
+        ListNode p  = reverseListRecursivly(node.next);
+        node.next.next = node;
+        /*
+        * 如果没有这一步， 
+        *
+        *  6 -> 2 -> 1 -> 3 -> 0 会变成
+        *  
+        *  6 <-  2 <- 1 <- 3 <- 0
+        *    ->
+        */
+        node.next = null; //这步非常重要，如果没有的话原来的第一个元素会形成环
+        return p;
+    }
+
+
     /**
      * 节点
      */
