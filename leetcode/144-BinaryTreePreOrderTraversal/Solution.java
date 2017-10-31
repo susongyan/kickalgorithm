@@ -32,6 +32,15 @@ class Solution {
         return result;
     }
 
+    /**
+     * 经典 非递归先序遍历
+     */
+    public List<Integer> preorderTraversalClassical(TreeNode root){
+        Stack<Integer> stack = new Stack<Integer>();
+        TreeNode cur = root;
+        
+    }
+
     public class Command{
         String s; //go , print
         TreeNode node;
