@@ -38,10 +38,10 @@ class Solution {
             result.get(level).add(node.val);
 
             if(node.left != null){
-                queue.off(new Pair<>(node.left, level + 1));
+                queue.offer(new Pair<>(node.left, level + 1));
             }
             if(node.right != null){
-                queue.off(new Pair<>(node.right, level + 1));
+                queue.offer(new Pair<>(node.right, level + 1));
             }
         }
         return result;
