@@ -11,7 +11,7 @@ class Solution {
     public int numSquares(int n) {
         Queue<Pair<Integer, Integer>> queue = new LinkedList<>();
         queue.offer(new Pair(n,0));
-        boolean[] visited = new boolean[n+1]; // 用数组来做图节点已遍历的标示 O(1)的复杂度 比用Set O(n)的快很多
+        boolean[] visited = new boolean[n+1]; // 用数组来做图节点已遍历的标示 O(1)的复杂度 比用Set O(1+n/k)快，k为set底层hashmap的buckets数
         visited[n] = true;
         while(!queue.isEmpty()){
             int num = queue.peek().getKey();

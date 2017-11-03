@@ -36,9 +36,21 @@ class Solution {
      * 经典 非递归先序遍历
      */
     public List<Integer> preorderTraversalClassical(TreeNode root){
-        Stack<Integer> stack = new Stack<Integer>();
+        List<Integer> result = new ArrayList<Integer>();
+        Stack<TreeNode> stack = new Stack<TreeNode>();
         TreeNode cur = root;
-        
+        while(cur != null || stack.size() > 0){
+            while(cur != null){
+                result.add(cur.val);
+                stack.push(cur);
+                cur = cur.left;
+            }
+            if(stack.size() > 0){
+                TreeNode recall = stack.pop();
+                cur = recall.right;
+            }
+        }
+        return result;
     }
 
     public class Command{
