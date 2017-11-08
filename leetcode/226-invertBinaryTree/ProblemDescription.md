@@ -9,6 +9,7 @@ Invert a binary tree 倒转二叉树
  / \   / \
 1   3 6   9
 ```
+
 成
 
 ```
