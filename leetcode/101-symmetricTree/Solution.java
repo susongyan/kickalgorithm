@@ -31,5 +31,5 @@ class Solution {
         TreeNode left;
         TreeNode right;
         TreeNode(int x) { val = x; }
-  } 
+    } 
 }
