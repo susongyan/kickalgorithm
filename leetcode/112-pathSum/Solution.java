@@ -17,8 +17,8 @@ class Solution {
             else
                 return true;
         }
-        return hashPathSum(root.left, sum - root.val) 
-            || hashPathSum(root.right, sum - root.val);
+        return hasPathSum(root.left, sum - root.val) 
+            || hasPathSum(root.right, sum - root.val);
     }
 
     public class TreeNode {
