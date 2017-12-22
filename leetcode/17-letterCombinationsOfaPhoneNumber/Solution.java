@@ -1,6 +1,8 @@
-package algrithm;
+package algrithm.lettercombinations;
+import java.util.List;
+import java.util.ArrayList;
 
-class Solution {
+public class Solution {
     String[] letterMap= new String[]{
         "  ",  // 0
         "",    // 1
