@@ -16,8 +16,8 @@ public class Solution{
         return result;
     }
 
-    // Çó½âC(n,k) µ±Ç°ÒÑ¾­ÕÒµ½µÄ×éºÏ´æ´¢ÔÚcombineÖĞ£¬ ĞèÒª´Óstart¿ªÊ¼ËÑË÷ĞÂµÄÔªËØ£»
-    // ÓÉÓÚÃ¿×é×éºÏÊÇÃ»ÓĞË³ĞòµÄ£¬ËùÒÔ²»ĞèÒªÔÙËÑË÷startÖ®Ç°µÄÔªËØ£¬ÒòÎªstartÖ®Ç°ÔªËØµÄËùÓĞ×éºÏÒÑ¾­ËÑË÷Íê±Ï
+    // æ±‚è§£C(n,k) å½“å‰å·²ç»æ‰¾åˆ°çš„ç»„åˆå­˜å‚¨åœ¨combineä¸­ï¼Œ éœ€è¦ä»startå¼€å§‹æœç´¢æ–°çš„å…ƒç´ ï¼›
+    // ç”±äºæ¯ç»„ç»„åˆæ˜¯æ²¡æœ‰é¡ºåºçš„ï¼Œæ‰€ä»¥ä¸éœ€è¦å†æœç´¢startä¹‹å‰çš„å…ƒç´ ï¼Œå› ä¸ºstartä¹‹å‰å…ƒç´ çš„æ‰€æœ‰ç»„åˆå·²ç»æœç´¢å®Œæ¯•
     private void findCombination(int n, int k, int start, List<Integer> combine){
         if(combine.size() == k){
             result.add(new ArrayList(combine));
@@ -26,14 +26,14 @@ public class Solution{
         
         //for(int i = start; i <= n; i++){
 
-        // µİ¹éÊ÷¼ôÖ¦ÓÅ»¯£¬È¥³ı²»±ØÒªµÄµİ¹é
-        // ×éºÏ³¤¶ÈÎªk£¬[i...n]ÖĞ×îÉÙ»¹ĞèÒª k - combine.size()¸ö¿ÕÎ»
-        // ÄÇÃ´Îª±£Ö¤ºóĞøÓĞ×ã¹»µÄÔªËØÌî³äµ½×éºÏÀïiµÄ·¶Î§Îª£º i + (k-combine.size) + 1 <= n ¼´ i < n - (k-combine.size()) + 1
-        // + 1 ÊÇÒòÎª[i...n] ¾ùÎª±ÕÇø¼ä startÑ¡È¡1, n=4,k=2 combine.size()=1Ê± 1 <= 4 -(2-1)µÄ»°iÖ»ÄÜµ½3£¬ÆäÊµi¿ÉÒÔµ½4µÄ
+        // é€’å½’æ ‘å‰ªæä¼˜åŒ–ï¼Œå»é™¤ä¸å¿…è¦çš„é€’å½’
+        // ç»„åˆé•¿åº¦ä¸ºkï¼Œ[i...n]ä¸­æœ€å°‘è¿˜éœ€è¦ k - combine.size()ä¸ªç©ºä½
+        // é‚£ä¹ˆä¸ºä¿è¯åç»­æœ‰è¶³å¤Ÿçš„å…ƒç´ å¡«å……åˆ°ç»„åˆé‡Œiçš„èŒƒå›´ä¸ºï¼š i + (k-combine.size) + 1 <= n å³ i < n - (k-combine.size()) + 1
+        // + 1 æ˜¯å› ä¸º[i...n] å‡ä¸ºé—­åŒºé—´ starté€‰å–1, n=4,k=2 combine.size()=1æ—¶ 1 <= 4 -(2-1)çš„è¯iåªèƒ½åˆ°3ï¼Œå…¶å®iå¯ä»¥åˆ°4çš„
         for(int i = start; i <= n-(k-combine.size()) + 1; i++){
             combine.add(i);
             findCombination(n,k, i+1 ,combine);
-            combine.remove(combine.size() - 1); // ÒÆ³ı¸Õ¼Ó½øÈ¥µÄÔªËØ
+            combine.remove(combine.size() - 1); // ï¿½Æ³ï¿½ï¿½Õ¼Ó½ï¿½È¥ï¿½ï¿½Ôªï¿½ï¿½
         }
     }
 }
