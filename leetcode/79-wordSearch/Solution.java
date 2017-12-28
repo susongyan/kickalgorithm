@@ -38,6 +38,11 @@ public class Solution {
             scanned[x][y] = true; 
             result = result || searchWord(board, word, index + 1, x + move[i][0],y + move[i][1]);
             scanned[x][y] = false;
+
+         // 由于二维数组的值所在范围是确定的，这里也可以不申明 scanned 标记辅助 直接将已访问过的 board[x][y] 置为特殊值如
+        //  board[x][y] = '*';
+        //  result = result || searchWord(board, word, index + 1, x + move[i][0],y + move[i][1]);
+        //  board[x][y] = word.charAt(index);// 回溯
         }
         return result;
     }
