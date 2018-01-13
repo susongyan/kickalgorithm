@@ -47,4 +47,21 @@ public class Solution{
         }
         return memo[0];
     }
+
+    /**
+     * leetcode别人的解法
+     *  https://leetcode.com/problems/house-robber/discuss/55695
+     * 
+     * 
+     */
+    private int robDp(int[] nums){
+        int prevNo = 0; // 不rob上一位元素
+        int prevYes = 0; // rob 上一位元素 
+        for(int i = 0; i < nums.length; i++){
+            int robCurrent = prevNo + nums[i]; // 如果rob当前房子，则不能rob上一个房子
+            prevNo = Math.max(prevNo, prevYes); // 如果不rob当前房子，则上一个房子可rob也可不rob
+            prevYes = robCurrent;
+        }
+        return Math.max(prevNo, prevYes);
+    }
 }
