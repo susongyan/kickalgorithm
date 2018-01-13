@@ -3,6 +3,10 @@ package algrithm.nqueens;
 import java.util.List;
 import java.util.ArrayList;
 
+/**
+ * n 皇后问题难点在于如何判断第index行不能放置的位置
+ * 然后回溯寻找所有的解
+ */
 public class Solution{
     private List<List<String>> result;
 
@@ -60,7 +64,7 @@ public class Solution{
     private List<String> generateBoard(List<Integer> row){
         List<String> result = new ArrayList<String>();
         for(int i = 0; i < row.size(); i++){
-            String s = "":
+            String s = "";
             for(int j = 0; j < row.size(); j++){
                 s += (row.get(i) == j ? 'Q' : '.');
             }
